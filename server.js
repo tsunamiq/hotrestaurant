@@ -46,7 +46,7 @@ app.get("/reserve", function(req, res) {
 // view reserve tables
 app.get("/api/view", function() {
     var shortTable = [];
-    for(var i=0; i< 4 ; i++){
+    for (var i = 0; i < 4; i++) {
         shortTable.push(tables[i]);
     }
     res.json(shortTable);
@@ -55,7 +55,7 @@ app.get("/api/view", function() {
 //  view waitlist
 app.get("/api/waitlist", function() {
     var shortTable = [];
-    for(var i=4 ;i< tables.length ; i++){
+    for (var i = 4; i < tables.length; i++) {
         shortTable.push(tables[i]);
     }
     res.json(shortTable);
