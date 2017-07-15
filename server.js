@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+app.use('/assets', express.static('assets'))
+
 var tables = [{
         name: "Jim Smith",
         phone: "710-538-9643",
