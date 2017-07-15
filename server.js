@@ -46,9 +46,22 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Get all Tables
-app.get("/api/view", function(tables) {
-    res.json(tables);
+// view reserve tables
+app.get("/api/view", function() {
+    var shortTable = [];
+    for(var i=0; i< 4 ; i++){
+        shortTable.push(tables[i]);
+    }
+    res.json(shortTable);
+});
+
+//  view waitlist
+app.get("/api/waitlist", function() {
+    var shortTable = [];
+    for(var i=4 ;i< tables.length ; i++){
+        shortTable.push(tables[i]);
+    }
+    res.json(shortTable);
 });
 
 
@@ -65,6 +78,9 @@ app.post("/api/reservation", function(req, res) {
 
     res.json(tables);
 });
+
+
+
 
 // Starts the server to begin listening
 // =============================================================
