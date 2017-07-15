@@ -1,0 +1,9 @@
+* {
+	font-family: 'Indie Flower', cursive;
+}
+
+.jumbotron {
+
+	background-image: url(http://www.chuckbauman.com/Line-of-Fire-for-car-hood%20flames.jpg);
+	color: white;
+}
