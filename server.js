@@ -11,21 +11,18 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 var tables = [{
-        routeName: "jimsmith",
         name: "Jim Smith",
         phone: "710-538-9643",
         email: "jim@jim.com",
         ui: "2182"
     },
     {
-        routeName: "joeblack",
         name: "Joe Black",
         phone: "829-964-7165",
         email: "joeblack@gmail.com",
         ui: "0284"
     },
     {
-        routeName: "jimsmith",
         name: "Ron Howard",
         phone: "927-083-8296",
         email: "ron@univeral.com",
@@ -68,6 +65,7 @@ app.get("/api/waitlist", function() {
 // Create New Reservation - takes in JSON input
 app.post("/api/reservation", function(req, res) {
     var newReservation = req.body;
+
     // newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
     console.log(newReservation);
@@ -76,7 +74,11 @@ app.post("/api/reservation", function(req, res) {
 
     console.log(tables)
 
+
     res.json(tables);
+    console.log('------------------------------------');
+    console.log(tables);
+    console.log('------------------------------------');
 });
 
 
