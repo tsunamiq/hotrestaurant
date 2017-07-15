@@ -44,21 +44,23 @@ app.get("/reserve", function(req, res) {
 });
 
 // view reserve tables
-app.get("/api/view", function() {
+app.get("/api/view", function(req,res) {
     var shortTable = [];
     for (var i = 0; i < 4; i++) {
         shortTable.push(tables[i]);
     }
+    console.log("reserve list JSON:" + shortTable)
     res.json(shortTable);
 });
 
 //  view waitlist
-app.get("/api/waitlist", function() {
+app.get("/api/waitlist", function(req,res) {
     var shortTable = [];
     for (var i = 4; i < tables.length; i++) {
         shortTable.push(tables[i]);
     }
     res.json(shortTable);
+    console.log("waitlist JSON:" + shortTable)
 });
 
 
