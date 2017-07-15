@@ -68,16 +68,12 @@ app.get("/api/waitlist", function(req, res) {
 app.post("/api/reservation", function(req, res) {
     var newReservation = req.body;
 
-    // newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
-
     console.log(newReservation);
-
     tables.push(newReservation);
-
-    console.log(tables)
 
 
     res.json(tables);
+    console.log(tables)
     console.log('------------------------------------');
     console.log(tables);
     console.log('------------------------------------');
